@@ -23,6 +23,10 @@ router.get('/app.js', function(request, response){
     response.sendFile("app.js", {"root": __dirname});
 });
 
+router.get('/res/:resname', function(request, response){
+    response.sendFile("res/" + request.params.resname, {"root": __dirname});
+});
+
 app.use(router);
 
 app.listen(app.get('port'), function() {
